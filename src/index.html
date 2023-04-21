@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chaotic Systems Simulator</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="side-icons">
+
+    <div class="icon">
+      <i class="material-icons" onclick="openNav('ScenarioSidebar')">radio_button_checked</i>
+      <span class="tooltip-text">Lorenz System</span>
+      <div id="ScenarioSidebar" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar')">&times;</a>
+        <div>
+          <span>Simulation Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="1" id="_orbits_l" oninput="updateParam('_orbits_l', 'output_orbits_l')">
+          </span>
+          <span style="float:left; display:flex;">n orbits:</span>
+          <span id="output_orbits_l">5</span>
+          <span>
+            <input type="range" min="100" max="10000" value="5000" step="100" id="_trajectory_l" oninput="updateParam('_trajectory_l', 'output_trajectory_l')">
+          </span>
+          <span style="float:left; display:flex;">trajectory length:</span>
+          <span id="output_trajectory_l">5000</span>
+          <span>
+            <input type="range" min="0.001" max="0.03" value="0.01" step="0.001" id="_step_l" oninput="updateParam('_step_l', 'output_step_l')">
+          </span>
+          <span style="float:left; display:flex;">simulation step:</span>
+          <span id="output_step_l">0.01</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>System Parameters</span>
+          <span>
+            <input type="range" min="1" max="30" value="10" step="1" id="_c1_l" oninput="updateParam('_c1_l', 'output_c1_l')">
+          </span>
+          <span style="float:left; display:flex;">gamma:</span>
+          <span id="output_c1_l">10</span>
+          <span>
+            <input type="range" min="1" max="50" value="28" step="1" id="_c2_l" oninput="updateParam('_c2_l', 'output_c2_l')">
+          </span>
+          <span style="float:left; display:flex;">rho:</span>
+          <span id="output_c2_l">28</span>
+          <span>
+            <input type="range" min="1" max="5" value="2.5" step="0.25" id="_c3_l" oninput="updateParam('_c3_l', 'output_c3_l')">
+          </span>
+          <span style="float:left; display:flex;">beta:</span>
+          <span id="output_c3_l">2.5</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>
+            <button class="btn" onclick="LorenzSystem()">Start Simulation</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon">
+      <i class="material-icons" onclick="openNav('ScenarioSidebar1')">radio_button_checked</i>
+      <span class="tooltip-text">Rössler Attractor</span>
+      <div id="ScenarioSidebar1" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar1')">&times;</a>
+        <div>
+          <span>Simulation Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="1" id="_orbits_r" oninput="updateParam('_orbits_r', 'output_orbits_r')">
+          </span>
+          <span style="float:left; display:flex;">n orbits:</span>
+          <span id="output_orbits_r">5</span>
+          <span>
+            <input type="range" min="100" max="10000" value="5000" step="100" id="_trajectory_r" oninput="updateParam('_trajectory_r', 'output_trajectory_r')">
+          </span>
+          <span style="float:left; display:flex;">trajectory length:</span>
+          <span id="output_trajectory_r">5000</span>
+          <span>
+            <input type="range" min="0.01" max="0.05" value="0.03" step="0.01" id="_step_r" oninput="updateParam('_step_r', 'output_step_r')">
+          </span>
+          <span style="float:left; display:flex;">simulation step:</span>
+          <span id="output_step_r">0.03</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>System Parameters</span>
+          <span>
+            <input type="range" min="0.01" max="2" value="0.2" step="0.01" id="_c1_r" oninput="updateParam('_c1_r', 'output_c1_r')">
+          </span>
+          <span style="float:left; display:flex;">a:</span>
+          <span id="output_c1_r">0.2</span>
+          <span>
+            <input type="range" min="0.01" max="2" value="0.2" step="0.01" id="_c2_r" oninput="updateParam('_c2_r', 'output_c2_r')">
+          </span>
+          <span style="float:left; display:flex;">b:</span>
+          <span id="output_c2_r">0.2</span>
+          <span>
+            <input type="range" min="0.01" max="10" value="5.7" step="0.01" id="_c3_r" oninput="updateParam('_c3_r', 'output_c3_r')">
+          </span>
+          <span style="float:left; display:flex;">c:</span>
+          <span id="output_c3_r">5.7</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>
+            <button class="btn" onclick="RosslerSystem()">Start Simulation</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon">
+      <i class="material-icons" onclick="openNav('ScenarioSidebar2')">radio_button_checked</i>
+      <span class="tooltip-text">Thomas' Cyclically Cymmetric Attractor</span>
+      <div id="ScenarioSidebar2" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar2')">&times;</a>
+        <div>
+          <span>Simulation Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="1" id="_orbits_t" oninput="updateParam('_orbits_t', 'output_orbits_t')">
+          </span>
+          <span style="float:left; display:flex;">n orbits:</span>
+          <span id="output_orbits_t">5</span>
+          <span>
+            <input type="range" min="100" max="10000" value="5000" step="100" id="_trajectory_t" oninput="updateParam('_trajectory_t', 'output_trajectory_t')">
+          </span>
+          <span style="float:left; display:flex;">trajectory length:</span>
+          <span id="output_trajectory_t">5000</span>
+          <span>
+            <input type="range" min="0.01" max="0.1" value="0.03" step="0.01" id="_step_t" oninput="updateParam('_step_t', 'output_step_t')">
+          </span>
+          <span style="float:left; display:flex;">simulation step:</span>
+          <span id="output_step_t">0.03</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>System Parameters</span>
+          <span>
+            <input type="range" min="0.01" max="1" value="0.2" step="0.01" id="_c1_t" oninput="updateParam('_c1_t', 'output_c1_t')">
+          </span>
+          <span style="float:left; display:flex;">b:</span>
+          <span id="output_c1_t">0.2</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>
+            <button class="btn" onclick="ThomasSystem()">Start Simulation</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="icon">
+      <i class="material-icons" onclick="openNav('ScenarioSidebar3')">radio_button_checked</i>
+      <span class="tooltip-text">Chua Circuit</span>
+      <div id="ScenarioSidebar3" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar3')">&times;</a>
+        <div>
+          <span>Simulation Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="1" id="_orbits_c" oninput="updateParam('_orbits_c', 'output_orbits_c')">
+          </span>
+          <span style="float:left; display:flex;">n orbits:</span>
+          <span id="output_orbits_c">5</span>
+          <span>
+            <input type="range" min="100" max="10000" value="5000" step="100" id="_trajectory_c" oninput="updateParam('_trajectory_c', 'output_trajectory_c')">
+          </span>
+          <span style="float:left; display:flex;">trajectory length:</span>
+          <span id="output_trajectory_c">5000</span>
+          <span>
+            <input type="range" min="0.01" max="0.1" value="0.03" step="0.01" id="_step_c" oninput="updateParam('_step_c', 'output_step_c')">
+          </span>
+          <span style="float:left; display:flex;">simulation step:</span>
+          <span id="output_step_c">0.03</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>System Parameters</span>
+          <span>
+            <input type="range" min="15" max="25" value="18.8" step="0.1" id="_c1_c" oninput="updateParam('_c1_c', 'output_c1_c')">
+          </span>
+          <span style="float:left; display:flex;">alpha:</span>
+          <span id="output_c1_c">18.8</span>
+          <span>
+            <input type="range" min="20" max="55" value="30" step="1" id="_c2_c" oninput="updateParam('_c2_c', 'output_c2_c')">
+          </span>
+          <span style="float:left; display:flex;">beta:</span>
+          <span id="output_c2_c">30</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>
+            <button class="btn" onclick="ChuaCircuit()">Start Simulation</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="icon">
+      <i class="material-icons" onclick="openNav('ScenarioSidebar4')">radio_button_checked</i>
+      <span class="tooltip-text">Aizawa Attractor</span>
+      <div id="ScenarioSidebar4" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar4')">&times;</a>
+        <div>
+          <span>Simulation Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="1" id="_orbits_a" oninput="updateParam('_orbits_a', 'output_orbits_a')">
+          </span>
+          <span style="float:left; display:flex;">n orbits:</span>
+          <span id="output_orbits_a">5</span>
+          <span>
+            <input type="range" min="100" max="10000" value="5000" step="100" id="_trajectory_a" oninput="updateParam('_trajectory_a', 'output_trajectory_a')">
+          </span>
+          <span style="float:left; display:flex;">trajectory length:</span>
+          <span id="output_trajectory_a">5000</span>
+          <span>
+            <input type="range" min="0.001" max="0.05" value="0.03" step="0.001" id="_step_a" oninput="updateParam('_step_a', 'output_step_a')">
+          </span>
+          <span style="float:left; display:flex;">simulation step:</span>
+          <span id="output_step_a">0.03</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>System Parameters</span>
+          <span>
+            <input type="range" min="0.1" max="1.5" value="0.95" step="0.01" id="_c1_a" oninput="updateParam('_c1_a', 'output_c1_a')">
+          </span>
+          <span style="float:left; display:flex;">a:</span>
+          <span id="output_c1_a">0.95</span>
+          <span>
+            <input type="range" min="0.1" max="1" value="0.7" step="0.1" id="_c2_a" oninput="updateParam('_c2_a', 'output_c2_a')">
+          </span>
+          <span style="float:left; display:flex;">b:</span>
+          <span id="output_c2_a">0.7</span>
+          <span>
+            <input type="range" min="0.1" max="10" value="0.6" step="0.1" id="_c3_a" oninput="updateParam('_c3_a', 'output_c3_a')">
+          </span>
+          <span style="float:left; display:flex;">c:</span>
+          <span id="output_c3_a">0.6</span>
+          <span>
+            <input type="range" min="1" max="10" value="5" step="0.1" id="_c4_a" oninput="updateParam('_c4_a', 'output_c4_a')">
+          </span>
+          <span style="float:left; display:flex;">d:</span>
+          <span id="output_c4_a">5</span>
+          <span>
+            <input type="range" min="0.01" max="0.5" value="0.25" step="0.01" id="_c5_a" oninput="updateParam('_c5_a', 'output_c5_a')">
+          </span>
+          <span style="float:left; display:flex;">e:</span>
+          <span id="output_c5_a">0.25</span>
+          <span>
+            <input type="range" min="0.01" max="0.2" value="0.1" step="0.01" id="_c6_a" oninput="updateParam('_c6_a', 'output_c6_a')">
+          </span>
+          <span style="float:left; display:flex;">f:</span>
+          <span id="output_c6_a">0.1</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>
+            <button class="btn" onclick="AizawaAttractor()">Start Simulation</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="icon">
+      <i class="material-icons" onclick="openNav('ScenarioSidebar5')">radio_button_checked</i>
+      <span class="tooltip-text">Rayleigh-Benard Attractor</span>
+      <div id="ScenarioSidebar5" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar5')">&times;</a>
+        <div>
+          <span>Simulation Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="1" id="_orbits_rb" oninput="updateParam('_orbits_rb', 'output_orbits_rb')">
+          </span>
+          <span style="float:left; display:flex;">n orbits:</span>
+          <span id="output_orbits_rb">5</span>
+          <span>
+            <input type="range" min="100" max="10000" value="5000" step="100" id="_trajectory_rb" oninput="updateParam('_trajectory_rb', 'output_trajectory_rb')">
+          </span>
+          <span style="float:left; display:flex;">trajectory length:</span>
+          <span id="output_trajectory_rb">5000</span>
+          <span>
+            <input type="range" min="0.001" max="0.05" value="0.03" step="0.001" id="_step_rb" oninput="updateParam('_step_rb', 'output_step_rb')">
+          </span>
+          <span style="float:left; display:flex;">simulation step:</span>
+          <span id="output_step_rb">0.03</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>System Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="9" step="0.1" id="_c1_rb" oninput="updateParam('_c1_rb', 'output_c1_rb')">
+          </span>
+          <span style="float:left; display:flex;">a:</span>
+          <span id="output_c1_rb">9</span>
+          <span>
+            <input type="range" min="1" max="20" value="12" step="0.1" id="_c2_rb" oninput="updateParam('_c2_rb', 'output_c2_rb')">
+          </span>
+          <span style="float:left; display:flex;">r:</span>
+          <span id="output_c2_rb">12</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="0.1" id="_c3_rb" oninput="updateParam('_c3_rb', 'output_c3_rb')">
+          </span>
+          <span style="float:left; display:flex;">b:</span>
+          <span id="output_c3_rb">5</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>
+            <button class="btn" onclick="RayleighBenardAttractor()">Start Simulation</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+  <script>
+    function openNav(id) {
+      document.getElementById(id).style.width = "300px";
+    }
+
+    function closeNav(id) {
+      document.getElementById(id).style.width = "0";
+    }
+
+    function updateParam(param_v, param_t) {
+      var _param_str = document.getElementById(param_v).value;
+      document.getElementById(param_t).innerHTML = _param_str;
+
+    }
+
+  </script>
+  <script src="js/three.js"></script>
+  <script src="js/OrbitControls.js"></script>
+  <script type="text/javascript" src="maths_utils.js"></script>
+  <script type="text/javascript" src="animations.js"></script>
+  <script type="text/javascript" src="physics.js"></script>
+  <script type="text/javascript" src="commands.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

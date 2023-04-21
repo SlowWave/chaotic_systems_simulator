@@ -1,0 +1,141 @@
+
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* remove side arrows input number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  width: 100px;
+  border-radius: 4px;
+}
+
+
+/* side icons */
+.side-icons {
+  position: absolute;
+  bottom: 0;
+}
+
+.side-bar {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.side-bar .icon {
+    float: left;
+}
+
+.side-bar .slider input[type=range] {
+  width: 85%;
+}
+
+.side-icons .btn {
+  position: absolute;
+  width: 80%;
+  height: 50px;
+  font-size: 20px;
+  background-color: #111;
+  border-radius: 5px;
+  color: #818181;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.5s;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.side-icons .btn:hover {
+  background-color: #818181;
+  color: #f1f1f1;
+}
+
+.icon i {
+  font-size: 48px;
+  color: #818181;
+  cursor: pointer;
+}
+
+.icon i:hover {
+  color: #f1f1f1;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #111;
+  color: #818181;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.icon:hover .tooltip-text {
+  visibility: visible;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav span {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  /* display: flex; */
+  /* align-items: center; */
+  /* vertical-align: middle; */
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav input[type=range] {
+  width: 85%;
+}
+
