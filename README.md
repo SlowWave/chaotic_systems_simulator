@@ -1,6 +1,6 @@
 # Chaotic Systems Simulator
 
-https://user-images.githubusercontent.com/95315431/233844458-18c25fea-3500-4171-9623-18491fb51766.mp4
+https://user-images.githubusercontent.com/95315431/233844950-272e8ac5-ef12-4def-908e-d8d4ff82706a.mp4
 
 ## Project Description
 
