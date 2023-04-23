@@ -15,15 +15,12 @@ There are several chaotic systems that can be simulated:
 - **Chua Circuit**, a simple electronic circuit that exhibits classic chaotic behavior, invented in 1983 by Leon O. Chua
 - **Aizawa Attractor**
 - **Rayleigh-Benard Attractor**
-- Generate a single body selecting its mass, radius as well as its initial position and velocity
-- Generate a random body
 
-Through the "Settings" panel it is possible to change the timestep used for numerical integration and the gravitational constant.
 
 ## Usage
 
-You can play with [N-Body Simulator](https://htmlpreview.github.io/?https://github.com/SlowWave/n_body_simulator/blob/main/src/index.html) online,
-otherwise, if you want to run the simulator on your local machine, simply clone this repository and open the index.html file with your browser.
+You can play with [Chaotic Systems Simulator]()
+online, otherwise, if you want to run the simulator on your local machine, simply clone this repository and open the index.html file with your browser.
 
 ## License
 
