@@ -136,9 +136,7 @@ function ComputeDerivatives(particle) {
     var vel = [];
 
     vel.push(c1 * (particle.pos[1] - 1/16 * Math.pow(particle.pos[0], 3) + 1/16 * particle.pos[0]));
-    // vel.push(5.2/5.0*particle.pos[1] - 4.264 * Math.pow(particle.pos[0], 3) + 2.08e2/1.25e2 * particle.pos[0]);
     vel.push(particle.pos[0] - particle.pos[1] + particle.pos[2]);
-    // vel.push(- c2 * particle.pos[1] - particle.pos[2]);
     vel.push(- c2 * particle.pos[1]);
   }
 
