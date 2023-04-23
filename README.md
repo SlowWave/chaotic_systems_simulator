@@ -22,7 +22,7 @@ The state of the system is represented by a single point in the 3D phase space w
 
 ## Usage
 
-You can play with [Chaotic Systems Simulator]()
+You can play with [Chaotic Systems Simulator](https://htmlpreview.github.io/?https://github.com/SlowWave/chaotic_systems_simulator/blob/master/src/index.html)
 online, otherwise, if you want to run the simulator on your local machine, simply clone this repository and open the index.html file with your browser.
 
 ## License
