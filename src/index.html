@@ -9,10 +9,10 @@
   <div class="side-icons">
 
     <div class="icon">
-      <i class="material-icons" onclick="openNav('ScenarioSidebar')">radio_button_checked</i>
+      <i class="material-icons" onclick="openNav('ScenarioSidebar_l')">radio_button_checked</i>
       <span class="tooltip-text">Lorenz System</span>
-      <div id="ScenarioSidebar" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar')">&times;</a>
+      <div id="ScenarioSidebar_l" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar_l')">&times;</a>
         <div>
           <span>Simulation Parameters</span>
           <span>
@@ -60,10 +60,10 @@
     </div>
 
     <div class="icon">
-      <i class="material-icons" onclick="openNav('ScenarioSidebar1')">radio_button_checked</i>
+      <i class="material-icons" onclick="openNav('ScenarioSidebar_r')">radio_button_checked</i>
       <span class="tooltip-text">Rössler Attractor</span>
-      <div id="ScenarioSidebar1" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar1')">&times;</a>
+      <div id="ScenarioSidebar_r" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar_r')">&times;</a>
         <div>
           <span>Simulation Parameters</span>
           <span>
@@ -111,10 +111,10 @@
     </div>
 
     <div class="icon">
-      <i class="material-icons" onclick="openNav('ScenarioSidebar2')">radio_button_checked</i>
+      <i class="material-icons" onclick="openNav('ScenarioSidebar_t')">radio_button_checked</i>
       <span class="tooltip-text">Thomas' Cyclically Symmetric Attractor</span>
-      <div id="ScenarioSidebar2" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar2')">&times;</a>
+      <div id="ScenarioSidebar_t" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar_t')">&times;</a>
         <div>
           <span>Simulation Parameters</span>
           <span>
@@ -152,10 +152,10 @@
     </div>
 
     <div class="icon">
-      <i class="material-icons" onclick="openNav('ScenarioSidebar3')">radio_button_checked</i>
+      <i class="material-icons" onclick="openNav('ScenarioSidebar_c')">radio_button_checked</i>
       <span class="tooltip-text">Chua Circuit</span>
-      <div id="ScenarioSidebar3" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar3')">&times;</a>
+      <div id="ScenarioSidebar_c" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar_c')">&times;</a>
         <div>
           <span>Simulation Parameters</span>
           <span>
@@ -199,10 +199,10 @@
 
 
     <div class="icon">
-      <i class="material-icons" onclick="openNav('ScenarioSidebar4')">radio_button_checked</i>
+      <i class="material-icons" onclick="openNav('ScenarioSidebar_a')">radio_button_checked</i>
       <span class="tooltip-text">Aizawa Attractor</span>
-      <div id="ScenarioSidebar4" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar4')">&times;</a>
+      <div id="ScenarioSidebar_a" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar_a')">&times;</a>
         <div>
           <span>Simulation Parameters</span>
           <span>
@@ -266,10 +266,10 @@
 
 
     <div class="icon">
-      <i class="material-icons" onclick="openNav('ScenarioSidebar5')">radio_button_checked</i>
+      <i class="material-icons" onclick="openNav('ScenarioSidebar_rb')">radio_button_checked</i>
       <span class="tooltip-text">Rayleigh-Benard Attractor</span>
-      <div id="ScenarioSidebar5" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar5')">&times;</a>
+      <div id="ScenarioSidebar_rb" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar_rb')">&times;</a>
         <div>
           <span>Simulation Parameters</span>
           <span>
@@ -316,7 +316,108 @@
       </div>
     </div>
 
+    <div class="icon">
+      <i class="material-icons" onclick="openNav('ScenarioSidebar_h')">radio_button_checked</i>
+      <span class="tooltip-text">Halvorsen Attractor</span>
+      <div id="ScenarioSidebar_h" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar_h')">&times;</a>
+        <div>
+          <span>Simulation Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="1" id="_orbits_h" oninput="updateParam('_orbits_h', 'output_orbits_h')">
+          </span>
+          <span style="float:left; display:flex;">n orbits:</span>
+          <span id="output_orbits_h">5</span>
+          <span>
+            <input type="range" min="100" max="10000" value="5000" step="100" id="_trajectory_h" oninput="updateParam('_trajectory_h', 'output_trajectory_h')">
+          </span>
+          <span style="float:left; display:flex;">trajectory length:</span>
+          <span id="output_trajectory_h">5000</span>
+          <span>
+            <input type="range" min="0.001" max="0.03" value="0.01" step="0.001" id="_step_h" oninput="updateParam('_step_h', 'output_step_h')">
+          </span>
+          <span style="float:left; display:flex;">simulation step:</span>
+          <span id="output_step_h">0.01</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>System Parameters</span>
+          <span>
+            <input type="range" min="0.5" max="5" value="1.5" step="0.1" id="_c1_h" oninput="updateParam('_c1_h', 'output_c1_h')">
+          </span>
+          <span style="float:left; display:flex;">a:</span>
+          <span id="output_c1_h">1.5</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>
+            <button class="btn" onclick="HalvorsenAttractor()">Start Simulation</button>
+          </span>
+        </div>
+      </div>
+    </div>
 
+
+    <div class="icon">
+      <i class="material-icons" onclick="openNav('ScenarioSidebar_d')">radio_button_checked</i>
+      <span class="tooltip-text">Dadras Attractor</span>
+      <div id="ScenarioSidebar_d" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar_d')">&times;</a>
+        <div>
+          <span>Simulation Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="1" id="_orbits_d" oninput="updateParam('_orbits_d', 'output_orbits_d')">
+          </span>
+          <span style="float:left; display:flex;">n orbits:</span>
+          <span id="output_orbits_d">5</span>
+          <span>
+            <input type="range" min="100" max="10000" value="5000" step="100" id="_trajectory_d" oninput="updateParam('_trajectory_d', 'output_trajectory_d')">
+          </span>
+          <span style="float:left; display:flex;">trajectory length:</span>
+          <span id="output_trajectory_d">5000</span>
+          <span>
+            <input type="range" min="0.001" max="0.01" value="0.005" step="0.001" id="_step_d" oninput="updateParam('_step_d', 'output_step_d')">
+          </span>
+          <span style="float:left; display:flex;">simulation step:</span>
+          <span id="output_step_d">0.005</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>System Parameters</span>
+          <span>
+            <input type="range" min="0.1" max="10" value="3" step="0.1" id="_c1_d" oninput="updateParam('_c1_d', 'output_c1_d')">
+          </span>
+          <span style="float:left; display:flex;">a:</span>
+          <span id="output_c1_d">3</span>
+          <span>
+            <input type="range" min="0.1" max="10" value="2.7" step="0.1" id="_c2_d" oninput="updateParam('_c2_d', 'output_c2_d')">
+          </span>
+          <span style="float:left; display:flex;">b:</span>
+          <span id="output_c2_d">2.7</span>
+          <span>
+            <input type="range" min="0.1" max="2" value="1.7" step="0.1" id="_c3_d" oninput="updateParam('_c3_d', 'output_c3_d')">
+          </span>
+          <span style="float:left; display:flex;">c:</span>
+          <span id="output_c3_d">1.7</span>
+          <span>
+            <input type="range" min="0.1" max="10" value="2" step="0.1" id="_c4_d" oninput="updateParam('_c4_d', 'output_c4_d')">
+          </span>
+          <span style="float:left; display:flex;">d:</span>
+          <span id="output_c4_d">2</span>
+          <span>
+            <input type="range" min="0.1" max="10" value="9" step="0.1" id="_c5_d" oninput="updateParam('_c5_d', 'output_c5_d')">
+          </span>
+          <span style="float:left; display:flex;">e:</span>
+          <span id="output_c5_d">9</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>
+            <button class="btn" onclick="DadrasAttractor()">Start Simulation</button>
+          </span>
+        </div>
+      </div>
+    </div>
 
 
   </div>

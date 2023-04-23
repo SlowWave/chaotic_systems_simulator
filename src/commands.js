@@ -116,3 +116,42 @@ function RayleighBenardAttractor() {
     scenario.CreateParticle(null, null, 20000, 0.02);
   }
 }
+
+function HalvorsenAttractor() {
+  var n_orbits = parseFloat(document.getElementById('_orbits_h').value);
+  max_points = parseFloat(document.getElementById('_trajectory_h').value);
+  c1 = parseFloat(document.getElementById('_c1_h').value);
+  h = parseFloat(document.getElementById('_step_h').value);
+  system = 6;
+
+  camera.position.x = 0;
+  camera.position.y = 0;
+  camera.position.z = -30;
+
+  scenario.ClearScenario();
+  for (var i = 0; i < n_orbits; i++){
+    scenario.CreateParticle(null, null, 20000, 0.02);
+  }
+}
+
+function DadrasAttractor() {
+  var n_orbits = parseFloat(document.getElementById('_orbits_d').value);
+  max_points = parseFloat(document.getElementById('_trajectory_d').value);
+  c1 = parseFloat(document.getElementById('_c1_d').value);
+  c2 = parseFloat(document.getElementById('_c2_d').value);
+  c3 = parseFloat(document.getElementById('_c3_d').value);
+  c4 = parseFloat(document.getElementById('_c4_d').value);
+  c5 = parseFloat(document.getElementById('_c5_d').value);
+  h = parseFloat(document.getElementById('_step_d').value);
+  system = 7;
+
+  camera.position.x = 0;
+  camera.position.y = 0;
+  camera.position.z = -10;
+
+  scenario.ClearScenario();
+  for (var i = 0; i < n_orbits; i++){
+    scenario.CreateParticle(null, null, 20000, 0.02);
+  }
+}
+

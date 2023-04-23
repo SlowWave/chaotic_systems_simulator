@@ -109,6 +109,7 @@ function ComputeDerivatives(particle) {
 
 
   if (system == 0) {
+    // Lorenz Attractor
     var vel = [];
 
     vel.push(c1 * (particle.pos[1] - particle.pos[0]));
@@ -117,6 +118,7 @@ function ComputeDerivatives(particle) {
   }
 
   else if (system == 1) {
+    // Rössler Attractor
     var vel = [];
 
     vel.push(- particle.pos[1] - particle.pos[2]);
@@ -125,6 +127,7 @@ function ComputeDerivatives(particle) {
   }
 
   else if (system == 2) {
+    // Thomas' Cyclically Symmetric Attractor
     var vel = [];
 
     vel.push(Math.sin(particle.pos[1]) - c1 * particle.pos[0]);
@@ -133,6 +136,7 @@ function ComputeDerivatives(particle) {
   }
 
   else if (system == 3) {
+    // Chua Circuit
     var vel = [];
 
     vel.push(c1 * (particle.pos[1] - 1/16 * Math.pow(particle.pos[0], 3) + 1/16 * particle.pos[0]));
@@ -141,6 +145,7 @@ function ComputeDerivatives(particle) {
   }
 
   else if (system == 4) {
+    // Aizawa Attractor
     var vel = [];
 
     vel.push((particle.pos[2] - c2) * particle.pos[0] - c4 * particle.pos[1]);
@@ -149,6 +154,7 @@ function ComputeDerivatives(particle) {
   }
 
   else if (system == 5) {
+    // Rayleigh-Benard Attractor
     var vel = [];
 
     vel.push(-c1 * particle.pos[0] + c1 * particle.pos[1]);
@@ -156,6 +162,23 @@ function ComputeDerivatives(particle) {
     vel.push(particle.pos[0] * particle.pos[1] - c3 * particle.pos[2]);
   }
 
+  else if (system == 6) {
+    // Halvorsen Attractor
+    var vel = [];
+
+    vel.push(-c1 * particle.pos[0] - 4 * particle.pos[1] - 4 * particle.pos[2] - Math.pow(particle.pos[1], 2));
+    vel.push(-c1 * particle.pos[1] - 4 * particle.pos[2] - 4 * particle.pos[0] - Math.pow(particle.pos[2], 2));
+    vel.push(-c1 * particle.pos[2] - 4 * particle.pos[0] - 4 * particle.pos[1] - Math.pow(particle.pos[0], 2));
+  }
+
+  else if (system == 7) {
+    // Dadras Attractor
+    var vel = [];
+
+    vel.push(particle.pos[1] - c1 * particle.pos[0] + c2 * particle.pos[1] * particle.pos[2]);
+    vel.push(c3 * particle.pos[1] - particle.pos[0] * particle.pos[2] + particle.pos[2]);
+    vel.push(c4 * particle.pos[0] * particle.pos[1] - c5 * particle.pos[2]);
+  }
   return vel;
 }
 
