@@ -190,7 +190,7 @@ function ArneodoAttractor() {
 
   scenario.ClearScenario();
   for (var i = 0; i < n_orbits; i++){
-    scenario.CreateParticle(null, null, 50000, 0.3);
+    scenario.CreateParticle(null, null, 20000, 0.3);
   }
 }
 
