@@ -3,19 +3,21 @@
 
 ## Project Description
 
-**Chaotic System Simulator** is simple web page that uses JavaScript and Three.js to render a 3D simulation of several chaotic systems in phase space.
-The state of the system is represented by a single point in the 3D phase space while the trajectory followed by the point represent the
-evolution of the system state variables.
+**Chaotic System Simulator** is a simple web page that uses JavaScript and Three.js to render a 3D simulation of several chaotic systems in phase space.
+The state of the system is represented by a single point in the 3D phase space while the trajectory followed by the point represent the evolution of the system state variables.
 
-There are several chaotic systems that can be simulated:
+## Chaotic Systems List
 
-- **Lorenz Attractor**, a simplified mathematical model for atmospheric convection developed in 1963 by Edward Lorenz, Ellen Fetter and Margaret Hamilton.
-- **Rössler Attractor**, a system of three non-linear ordinary differential equations originally studied by Otto Rössler in the 1970s.
-- **Thomas' Cyclically Symmetric Attractor**, a 3D strange attractor originally proposed by René Thomas.
-- **Chua Circuit**, a simple electronic circuit that exhibits classic chaotic behavior, invented in 1983 by Leon O. Chua
+- **Lorenz Attractor**
+- **Rössler Attractor**
+- **Thomas' Cyclically Symmetric Attractor**
+- **Chua Circuit**
 - **Aizawa Attractor**
 - **Rayleigh-Benard Attractor**
-
+- **Halvorsen Attractor**
+- **Dadras Attractor**
+- **Chen-Lee Attractor**
+- **Arneodo Attractor**
 
 ## Usage
 
