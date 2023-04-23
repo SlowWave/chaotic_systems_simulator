@@ -179,6 +179,18 @@ function ComputeDerivatives(particle) {
     vel.push(c3 * particle.pos[1] - particle.pos[0] * particle.pos[2] + particle.pos[2]);
     vel.push(c4 * particle.pos[0] * particle.pos[1] - c5 * particle.pos[2]);
   }
+
+  else if (system == 8) {
+    // Chen-Lee Attractor
+    var vel = [];
+
+    vel.push(c1 * particle.pos[0] - particle.pos[1] * particle.pos[2]);
+    vel.push(c2 * particle.pos[1] + particle.pos[0] * particle.pos[2]);
+    vel.push(c3 * particle.pos[2] + (particle.pos[0] * particle.pos[1]) / 3);
+  }
+  
+
+
   return vel;
 }
 

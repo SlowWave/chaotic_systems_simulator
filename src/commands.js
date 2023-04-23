@@ -90,11 +90,11 @@ function AizawaAttractor() {
 
   camera.position.x = 0;
   camera.position.y = 0;
-  camera.position.z = -10;
+  camera.position.z = -5;
 
   scenario.ClearScenario();
   for (var i = 0; i < n_orbits; i++){
-    scenario.CreateParticle(null, null, 5000, 0.02);
+    scenario.CreateParticle(null, null, 5000, 0.05);
   }
 }
 
@@ -130,7 +130,7 @@ function HalvorsenAttractor() {
 
   scenario.ClearScenario();
   for (var i = 0; i < n_orbits; i++){
-    scenario.CreateParticle(null, null, 20000, 0.02);
+    scenario.CreateParticle(null, null, 20000, 0.2);
   }
 }
 
@@ -147,11 +147,30 @@ function DadrasAttractor() {
 
   camera.position.x = 0;
   camera.position.y = 0;
-  camera.position.z = -10;
+  camera.position.z = -20;
 
   scenario.ClearScenario();
   for (var i = 0; i < n_orbits; i++){
-    scenario.CreateParticle(null, null, 20000, 0.02);
+    scenario.CreateParticle(null, null, 20000, 0.1);
   }
 }
 
+
+function ChenLeeAttractor() {
+  var n_orbits = parseFloat(document.getElementById('_orbits_cl').value);
+  max_points = parseFloat(document.getElementById('_trajectory_cl').value);
+  c1 = parseFloat(document.getElementById('_c1_cl').value);
+  c2 = parseFloat(document.getElementById('_c2_cl').value);
+  c3 = parseFloat(document.getElementById('_c3_cl').value);
+  h = parseFloat(document.getElementById('_step_cl').value);
+  system = 8;
+
+  camera.position.x = 0;
+  camera.position.y = 0;
+  camera.position.z = -80;
+
+  scenario.ClearScenario();
+  for (var i = 0; i < n_orbits; i++){
+    scenario.CreateParticle(null, null, 50000, 0.5);
+  }
+}
