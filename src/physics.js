@@ -188,7 +188,15 @@ function ComputeDerivatives(particle) {
     vel.push(c2 * particle.pos[1] + particle.pos[0] * particle.pos[2]);
     vel.push(c3 * particle.pos[2] + (particle.pos[0] * particle.pos[1]) / 3);
   }
-  
+
+  else if (system == 9) {
+    // Arneodo Attractor
+    var vel = [];
+
+    vel.push(particle.pos[1]);
+    vel.push(particle.pos[2]);
+    vel.push(-c1 * particle.pos[0] - c2 * particle.pos[1] - particle.pos[2] + c3 * Math.pow(particle.pos[0], 3));
+  }
 
 
   return vel;

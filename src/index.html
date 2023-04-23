@@ -419,8 +419,6 @@
       </div>
     </div>
 
-
-
     <div class="icon">
       <i class="material-icons" onclick="openNav('ScenarioSidebar_cl')">radio_button_checked</i>
       <span class="tooltip-text">Chen-Lee Attractor</span>
@@ -472,6 +470,56 @@
       </div>
     </div>
 
+    <div class="icon">
+      <i class="material-icons" onclick="openNav('ScenarioSidebar_ar')">radio_button_checked</i>
+      <span class="tooltip-text">Arneodo Attractor</span>
+      <div id="ScenarioSidebar_ar" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav('ScenarioSidebar_ar')">&times;</a>
+        <div>
+          <span>Simulation Parameters</span>
+          <span>
+            <input type="range" min="1" max="20" value="5" step="1" id="_orbits_ar" oninput="updateParam('_orbits_ar', 'output_orbits_ar')">
+          </span>
+          <span style="float:left; display:flex;">n orbits:</span>
+          <span id="output_orbits_ar">5</span>
+          <span>
+            <input type="range" min="100" max="10000" value="5000" step="100" id="_trajectory_ar" oninput="updateParam('_trajectory_ar', 'output_trajectory_ar')">
+          </span>
+          <span style="float:left; display:flex;">trajectory length:</span>
+          <span id="output_trajectory_ar">5000</span>
+          <span>
+            <input type="range" min="0.001" max="0.05" value="0.01" step="0.001" id="_step_ar" oninput="updateParam('_step_ar', 'output_step_ar')">
+          </span>
+          <span style="float:left; display:flex;">simulation step:</span>
+          <span id="output_step_ar">0.01</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>System Parameters</span>
+          <span>
+            <input type="range" min="-10" max="-1" value="-5.5" step="0.1" id="_c1_ar" oninput="updateParam('_c1_ar', 'output_c1_ar')">
+          </span>
+          <span style="float:left; display:flex;">alpha:</span>
+          <span id="output_c1_ar">-5.5</span>
+          <span>
+            <input type="range" min="1" max="10" value="3.5" step="0.1" id="_c2_ar" oninput="updateParam('_c2_ar', 'output_c2_ar')">
+          </span>
+          <span style="float:left; display:flex;">beta:</span>
+          <span id="output_c2_ar">3.5</span>
+          <span>
+            <input type="range" min="-5" max="-0.1" value="-1" step="0.01" id="_c3_ar" oninput="updateParam('_c3_ar', 'output_c3_ar')">
+          </span>
+          <span style="float:left; display:flex;">delta:</span>
+          <span id="output_c3_ar">-1</span>
+        </div>
+        <hr style="width:85%;text-align:left;margin-left:4">
+        <div>
+          <span>
+            <button class="btn" onclick="ArneodoAttractor()">Start Simulation</button>
+          </span>
+        </div>
+      </div>
+    </div>
 
   </div>
   <script>

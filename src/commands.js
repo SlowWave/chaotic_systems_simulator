@@ -174,3 +174,23 @@ function ChenLeeAttractor() {
     scenario.CreateParticle(null, null, 50000, 0.5);
   }
 }
+
+function ArneodoAttractor() {
+  var n_orbits = parseFloat(document.getElementById('_orbits_ar').value);
+  max_points = parseFloat(document.getElementById('_trajectory_ar').value);
+  c1 = parseFloat(document.getElementById('_c1_ar').value);
+  c2 = parseFloat(document.getElementById('_c2_ar').value);
+  c3 = parseFloat(document.getElementById('_c3_ar').value);
+  h = parseFloat(document.getElementById('_step_ar').value);
+  system = 9;
+
+  camera.position.x = 0;
+  camera.position.y = 0;
+  camera.position.z = -40;
+
+  scenario.ClearScenario();
+  for (var i = 0; i < n_orbits; i++){
+    scenario.CreateParticle(null, null, 50000, 0.3);
+  }
+}
+
